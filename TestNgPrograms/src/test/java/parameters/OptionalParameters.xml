@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+	<suite name="TestNG Parameters Suite">
+	   <test name="Params">
+	      <parameter name="message" value="Normal Parameter Selected" />
+	      <classes>
+	         <class name="parameters.Optional_Parameters" />
+	      </classes>
+	   </test>
+	   <test name="Params2">
+	      <classes>
+	         <class name="parameters.Optional_Parameters" />
+	      </classes>
+	   </test>
+	</suite>
+

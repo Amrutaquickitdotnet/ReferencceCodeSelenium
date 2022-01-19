@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG XML Dependency Suite" >
+   <test name="QuickITNet" >
+   	<groups>
+   		<dependencies>
+   			<group depends-on= "openbrowser" name= "login"></group>
+   			<group depends-on= "login" name= "viewaccount"></group>
+   			<group depends-on= "viewacc" name= "logout"></group>
+   		</dependencies>
+   		</groups>
+       <classes> 
+          <class name="dependent.TestNgDependentTestinxmlsuite" />
+       </classes>
+   </test>
+ </suite>
