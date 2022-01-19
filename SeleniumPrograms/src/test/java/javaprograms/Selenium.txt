@@ -1,0 +1,18 @@
+Selenium Automate Only browser !!! 
+
+Selenium is  a tool or framework ?
+
+Selenium is Standalone jar libraries which help us to create framework.
+
+
+1. Download Selenium Server standalone jar files
+2. You need to install java 
+3. Press Window+R from your keyboard
+4. To install java
+Java -----JDK(java Development Kit)
+
+JRE(Java RunTime Environment)
+
+
+
+

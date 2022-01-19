@@ -1,0 +1,54 @@
+What is variable?
+
+var => value can be change
+
+ 1. Declaring variable
+
+int a;
+
+2. Naming variables:(initialization of variable)
+int a = 10;
+
+Datatype referencevariable = value;
+
+============
+
+Data Types
+1. Primitive => inbuit data type
+2. Non -Primitive (user defined data type)
+String 
+Array
+Collection
+-2147483648
+===============
+
+(wrapper ) , FLoat
+
+Integer  Double
+
+int      float
+
+long     double
+
+
+My additon is 30
+The minimum value of integer is -2147483648
+The maximum value of integer is 2147483647
+The size of my integer is 32bits
+================================
+The minimum value of long is -9223372036854775808
+The maximum value of long is 9223372036854775807
+The size of long is 64
+====================================
+The minimum value of float is 1.4E-45
+The maximum value of float is 3.4028235E38
+The size of float is 32
+=================================
+How to Find WebElement is Selenium?
+
+
+
+
+
+
+
