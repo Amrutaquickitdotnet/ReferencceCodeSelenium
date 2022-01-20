@@ -49,6 +49,8 @@ public class checkboxselection {
 
 		e.click();
 		System.out.println("Checkbox was selected:" + e.isSelected());
+		e.click();
+		System.out.println("Checkbox is disabled"+ " "+e.isSelected());
 
 	}
 
@@ -66,6 +68,11 @@ public class checkboxselection {
 	}
 
 	public static void multiplecheckbox() {
+		
+		String s = "     pooja    ";
+		System.out.println("Before trim"+s);
+		
+		System.out.println("After Trimming"+":"+s.trim());
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@id='resultTable']/tbody//input"));
 		for (WebElement chbox : checkboxes) {
 			WebElement vacancy = chbox.findElement(By.xpath("../../td[2]"));
@@ -84,7 +91,7 @@ public class checkboxselection {
 		int totalcheckboxes = checkboxes.size();
 		for (int i = 0; i < totalcheckboxes; i++) 
 		{
-			if (i < 3)
+			if (i <=2)
 			{
 				checkboxes.get(i).click();
 			}
@@ -94,13 +101,14 @@ public class checkboxselection {
 	
 	public static void selectedcheckbox() {
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@id='resultTable']/tbody//input"));
-		for (WebElement chbox : checkboxes) {
+		for (WebElement chbox : checkboxes)
+		{
 			WebElement manager = chbox.findElement(By.xpath("../../td[4]"));
 			String hiringManager = manager.getText();
 			WebElement vacancyElement  = chbox.findElement(By.xpath("../../td[2]"));
 			String vacancy = vacancyElement.getText();
 			//System.out.println(vacancy+" " + hiringManager);
-			if (hiringManager.startsWith("Odis") && vacancy.contains("Associate IT Manager")) 
+			if (hiringManager.startsWith("Linda") && vacancy.contains("Sales Representative")) 
 			{
 				chbox.click();
 				System.out.println(vacancy+ " "+ hiringManager);

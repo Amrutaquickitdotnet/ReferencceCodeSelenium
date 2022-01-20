@@ -2,39 +2,34 @@ package browsers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class multipleBrowserLaunch {
 	static WebDriver driver;
-	
-	public static void main(String[] args)  {
-		
-		launch();
 
-}
-	
-	
-	public static void launch() {
-		System.setProperty("webdriver.chrome.driver", "D:\\drivers\\chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", "D:\\drivers\\geckodriver.exe");
-		System.setProperty("webdriver.edge.driver", "D:\\drivers\\msedgedriver.exe");
-		
-		String browser ="Edge";
-		
-		
-		if(browser.equals("Mozilla")) 
+	public static void main(String[] args) {
+
+		openBrowser("firefox");
+
+	}
+
+	public static void openBrowser(String browserType) {
+		switch (browserType) {
+		case "firefox":
+			System.setProperty("webdriver.gecko.driver", "D:\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
-		 else if(browser.equals("Chrome"))
+			break;
+		case "chrome":
 			driver = new ChromeDriver();
-		else if(browser.equals("Edge"))
-			driver = new EdgeDriver();
-		
-		
-		// browser init
-		driver.get("http://yahoo.com");
-		System.out.println(driver.getTitle());
-		// commands
-		
+			break;
+		case "Edge":
+			System.setProperty("webdriver.edge.driver", "D:\\drivers\\msedgedriver.exe");
+			break;
+		default:
+			System.out
+					.println("browser : " + browserType + " is invalid, Launching chromedriver as browser of choice..");
+			driver = new ChromeDriver();
+		}
 	}
 }

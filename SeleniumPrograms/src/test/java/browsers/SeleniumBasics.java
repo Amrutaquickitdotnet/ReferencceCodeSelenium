@@ -12,31 +12,26 @@ public class SeleniumBasics {
 	@Test
 	public void testApp() {
 		WebDriverManager.chromedriver().setup();
-		 ChromeDriver cd  = new ChromeDriver();
-		
+		ChromeDriver cd = new ChromeDriver();
+
 		cd.get("http://yahoo.com");
-		
-		// version of firefox  - turn off the automatic update
-		//System.setProperty("webdriver.gecko.driver", "D:\\drivers\\geckodriver.exe");
+
+		// version of firefox - turn off the automatic update
+		// System.setProperty("webdriver.gecko.driver", "D:\\drivers\\geckodriver.exe");
 		FirefoxDriver fd = new FirefoxDriver();
 		fd.get("http://cnn.com");
-		
-		
+
 		// zoom - 100%
 		// protected mode is off for all 4
 		// security - all active content
-		//System.setProperty("webdriver.ie.driver", "D:\\drivers\\IEDriverServer.exe");
-		//InternetExplorerDriver ie =  new InternetExplorerDriver();
-		//ie.get("http://google.com");
-		 
-		//System.setProperty("webdriver.edge.driver", "D:\\drivers\\msedgedriver.exe");
+		// System.setProperty("webdriver.ie.driver", "D:\\drivers\\IEDriverServer.exe");
+		// InternetExplorerDriver ie = new InternetExplorerDriver();
+		// ie.get("http://google.com");
+
+		// System.setProperty("webdriver.edge.driver", "D:\\drivers\\msedgedriver.exe");
 		EdgeDriver ed = new EdgeDriver();
 		ed.get("http://yahoo.com");
-		
-		
-		
-		
-		
+
 	}
 
 }

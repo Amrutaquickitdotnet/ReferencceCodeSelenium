@@ -1,0 +1,11 @@
+how to select value from checkbox in selenium 
+
+property =
+
+input type = "checkbox"
+
+1. we need to select All checkboxes
+2. you need to select First (Count ) checkboxes
+3. you need to select last(count) chekboxes
+4.  Combination of designation with check
+5. deselect checkbox
