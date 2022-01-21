@@ -1,16 +1,19 @@
 package weblocators;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 
-public class Example_017_NullSkull{
-
-	@Test
-	public void testApp() {
-		System.setProperty("webdriver.chrome.driver", "D:\\JarFiles\\chromedriver.exe");
-		ChromeDriver driver = new ChromeDriver();
+public class Example_017_NullSkull
+{
+	static WebDriver driver;
+	public static void main(String[] args) {
+		testApp();
+	}
+	public static void testApp() {
+		
+		 driver = new ChromeDriver();
 		
 		driver.get(" http://www.nullskull.com/articles/SumCaptchaTest.aspx");
 		String n1 = driver.findElement(By.id("lblNum1")).getText();

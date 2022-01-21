@@ -3,7 +3,7 @@ package dropdown;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -22,6 +22,7 @@ public class Dropdown_Approach1{
 		WebDriverManager.chromedriver().setup();
 		 ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.opencart.com/index.php?route=account/register");
+		driver.manage().window().maximize();
 		WebElement countries = driver.findElement(By.id("input-country"));
 		Select se = new Select(countries);
 		se.selectByVisibleText("Greece");

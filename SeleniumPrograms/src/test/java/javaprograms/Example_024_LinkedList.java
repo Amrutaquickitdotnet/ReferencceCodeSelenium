@@ -1,9 +1,9 @@
 package javaprograms;
 
-import java.util.ArrayList;
+
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
+
 
 public class Example_024_LinkedList {
 

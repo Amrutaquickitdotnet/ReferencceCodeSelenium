@@ -11,15 +11,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class RadioButtons {
+	static ChromeDriver driver;
 // select
 // which is selected
 	//https://patient.labcorp.com/registration
 	//input.ng-touched.ng-dirty.ng-valid
 	//label[text()='Female']/preceding-sibling::input
-	@Test
-	public void radio() {
+	public static void main(String[] args) {
+		radio();
+		
+	}
+	public static void radio() {
 		WebDriverManager.chromedriver().setup();
-		 ChromeDriver driver  = new ChromeDriver();
+		  driver  = new ChromeDriver();
 		driver.get("https://www.chabadpotomac.com/templates/articlecco_cdo/aid/1094542/jewish/HS-Registration-Form-New-Student.htm");
 		driver.manage().window().maximize();
 		List<WebElement> radios = driver.findElements(By.name("reading_proficiency"));

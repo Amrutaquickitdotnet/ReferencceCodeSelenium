@@ -9,13 +9,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
+
 
 public class Example_015_Google {
 	static WebDriver driver;
 
-	@Test
-	public void testApp() {
+	
+
+	public static void main(String[] args)// Static method
+	{
+testApp();
+	}
+	public static void testApp() {
 		String selection = "hello";
 		System.setProperty("webdriver.chrome.driver", "D:\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();

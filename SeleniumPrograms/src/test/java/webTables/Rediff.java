@@ -12,9 +12,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class Rediff {
+	static WebDriver driver;
 	
-	@Test
-	public void testTable() {
+	public static void main(String[] args) {
+		testTable();
+	}
+	public static void testTable() {
 		WebDriverManager.chromedriver().setup();
 		 ChromeDriver driver  = new ChromeDriver();
 		

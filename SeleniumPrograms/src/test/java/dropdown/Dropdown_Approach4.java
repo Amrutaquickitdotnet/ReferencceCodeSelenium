@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -35,8 +35,7 @@ public class Dropdown_Approach4 {
 		List<WebElement> list = driver.findElements(
 				By.xpath("//div[@class='dropdown-menu show' and @aria-labelledby='dropdownMenuButton']/a"));
 
-		// List<WebElement> list =
-		// driver.findElements(By.cssSelector("div.dropdown-menu[aria-labelledby=dropdownMenuButton] > a"));
+		
 		
 
 		System.out.println(list.size());

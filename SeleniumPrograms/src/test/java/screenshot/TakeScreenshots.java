@@ -9,15 +9,17 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TakeScreenshots {
 
+	public static void main(String[] args) {
+		screenshot();
 
-	@Test
-	public void screenshot() {
+	}
+	public static void screenshot() {
 		WebDriverManager.chromedriver().setup();
 		 ChromeDriver driver  = new ChromeDriver();
 		driver.get(

@@ -12,7 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class TakingScreenshot2 {
@@ -53,7 +53,7 @@ public class TakingScreenshot2 {
 		public static void GrabScreenShot(){
 			File screenFile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 				try {
-					FileUtils.copyFile(screenFile, new File("D:\\Amruta\\ReferenceCode\\ReferenceCode\\Screenshot\\abc.jpg"));
+					FileUtils.copyFile(screenFile, new File("D://abc.jpg"));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

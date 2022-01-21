@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,7 +48,7 @@ public class FileUpload {
 		}
 		public static void fileUpload(){
 			WebElement obj = driver.findElement(By.xpath("//input[@id='photofile']"));
-			obj.sendKeys("D:\\Amruta\\AmrutaSelenium_Examples\\TextFile.txt");
+			obj.sendKeys("FilePath");
 		}
 		
 

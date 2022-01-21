@@ -3,17 +3,14 @@ package windowsmanagement;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class WindowsSelenium{
 	
-	@Test
 	public void testWindows() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		 ChromeDriver driver  = new ChromeDriver();

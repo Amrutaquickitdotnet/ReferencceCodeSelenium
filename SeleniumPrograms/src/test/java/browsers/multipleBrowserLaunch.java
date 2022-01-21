@@ -17,14 +17,16 @@ public class multipleBrowserLaunch {
 	public static void openBrowser(String browserType) {
 		switch (browserType) {
 		case "firefox":
-			System.setProperty("webdriver.gecko.driver", "D:\\drivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"//src//test//resources//drivers//geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		case "chrome":
 			driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//test//resources//drivers//chromedriver.exe");
 			break;
 		case "Edge":
-			System.setProperty("webdriver.edge.driver", "D:\\drivers\\msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"//src//test//resources//drivers//msedgedriver.exe");
+
 			break;
 		default:
 			System.out

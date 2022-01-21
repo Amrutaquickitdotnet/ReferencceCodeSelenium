@@ -1,6 +1,5 @@
 package javaprograms;
 
-import java.util.Scanner;
 // This program illustrate Assignment operator
 public class Example_005_Assignment_Operators 
 {

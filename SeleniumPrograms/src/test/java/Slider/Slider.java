@@ -12,7 +12,7 @@ public class Slider {
 static WebDriver driver;
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
-		// ChromeDriver driver  = new ChromeDriver();
+  driver  = new ChromeDriver();
 		driver.get("http://jqueryui.com/slider/");
 		//Identify WebElement
 		
@@ -39,7 +39,7 @@ static WebDriver driver;
 			
 			Actions move = new Actions(driver);
 		
-			move.dragAndDropBy(slider, 10, 300).build().perform();
+			move.dragAndDropBy(slider, 10, 500).build().perform();
 		
 			
 			

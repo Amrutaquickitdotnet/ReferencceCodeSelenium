@@ -13,15 +13,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Selenium_Example002_windowManagement_Alert {
-
+  static WebDriver driver;
 	public static void main(String[] args) {
 		startAlert();
 	}
 
 	public static void startAlert() {
 		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver();
+		 driver = new ChromeDriver();
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		driver.manage().window().maximize();
 		driver.findElement(By.name("proceed")).click();
 		// delay for alert to appear
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));

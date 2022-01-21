@@ -6,7 +6,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
+
 
 
 public class ReadDataFromxls_HSSF {
@@ -15,7 +15,7 @@ public class ReadDataFromxls_HSSF {
 				public static void ReadExcel() throws IOException
 				{
 					
-				String data = "D:\\Amruta\\Testexcelprogram.xls";
+				String data = System.getProperty("user.dir")+"//src/test/resources//Testdata.xls";
 				
 				FileInputStream fs = new FileInputStream(data);//FileIputStream => to read Data from xls
 				

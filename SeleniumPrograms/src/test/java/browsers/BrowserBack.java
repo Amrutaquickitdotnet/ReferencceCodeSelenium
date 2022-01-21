@@ -13,7 +13,7 @@ public class BrowserBack {
 		WebDriverManager.chromedriver().setup();
 		 ChromeDriver d2  = new ChromeDriver();
 		d2.navigate().to("http://yahoo.com"); // chrome to yahoo
-		d2 = new ChromeDriver();
+	
 		d2.manage().window().maximize();
 		d2.get("http://quickitdotnet.co.in");// 
 		d2.navigate().back();

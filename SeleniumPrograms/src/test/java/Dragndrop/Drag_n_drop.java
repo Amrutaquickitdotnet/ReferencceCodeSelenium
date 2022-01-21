@@ -1,7 +1,7 @@
 package Dragndrop;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -14,9 +14,8 @@ static ChromeDriver driver;
 		
 		
 		launchbrowser();
-		 WebElement e = driver.findElement(By.id("item5")); 
-		 WebElement e1 = driver.findElement(By.id("item1"));
-		 dragndrop(driver, e, e1);
+		 
+		 dragndrop();
 		 
 	}
 	
@@ -24,15 +23,25 @@ static ChromeDriver driver;
 	{
 		WebDriverManager.chromedriver().setup();
 		  driver  = new ChromeDriver();
-		driver.get("http://executeautomation.com/demosite/Dragging.html");
-		driver.manage().window().maximize();
-		
+		  driver.get("https://javascript.info/article/mouse-drag-and-drop/ball4/"); 
+		  
+		  driver.manage().window().maximize();
+		  
 		
 	}
-	public static void dragndrop(WebDriver driver, WebElement srcElement, WebElement dstElement)
+	public static void dragndrop()
 	{
-		Actions action = new Actions(driver);
-		action.dragAndDrop(srcElement, dstElement).build().perform();
+		
+        //Opening a link in a new tab in Selenium using action class
+        WebElement dgragFrom = driver.findElement(By.xpath("//*[@id= 'ball']"));  
+        
+        WebElement dropTo = driver.findElement(By.xpath("//*[@id= 'gate']"));        
+       
+      
+        //Performing Drag and drop Action
+        Actions actions = new Actions(driver); 
+        actions.dragAndDrop(dgragFrom, dropTo).build().perform();
+
 	}
 
 }

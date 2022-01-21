@@ -13,7 +13,7 @@ public class managecookies {
 
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
-		// ChromeDriver driver  = new ChromeDriver();
+		 driver  = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
 

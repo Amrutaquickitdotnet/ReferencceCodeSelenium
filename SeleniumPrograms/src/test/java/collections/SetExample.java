@@ -20,12 +20,10 @@ public class SetExample {
 		System.out.println(s.size());
 		
 		Iterator<String> it = s.iterator();
-		//System.out.println(it.next());
-		//System.out.println(it.next());
-		//System.out.println(it.next());
-		//System.out.println(it.next());
-		while(it.hasNext())
+	
+		while(it.hasNext()) {
 			System.out.println(it.next());
+		}
 
 	}
 
