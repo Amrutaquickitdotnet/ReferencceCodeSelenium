@@ -53,7 +53,7 @@ public class TakingScreenshot2 {
 		public static void GrabScreenShot(){
 			File screenFile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 				try {
-					FileUtils.copyFile(screenFile, new File("D://abc.jpg"));
+					FileUtils.copyFile(screenFile, new File("G:\\Screenshot\\capture.jpeg"));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

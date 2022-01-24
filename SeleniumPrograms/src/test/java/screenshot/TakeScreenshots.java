@@ -2,7 +2,9 @@ package screenshot;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.FileHandler;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 
@@ -27,11 +29,15 @@ public class TakeScreenshots {
 		driver.manage().window().maximize();
 
 		WebElement menu = driver.findElement(By.cssSelector(".chabad_content_head"));
+		
+		//File testFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		
+		
 		try {
 			// get the dynamic folder name
 			org.openqa.selenium.io.FileHandler.copy(srcFile,
-					new File("D:\\SeleniumProgramsQuickitdotnet\\images\\test.jpg"));
+					new File("G:\\Screenshot\\abc.png"));
 			// test.addScreenCaptureFromPath("path of image", "xxxx");
 
 		} catch (IOException e) {

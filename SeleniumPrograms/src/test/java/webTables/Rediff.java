@@ -29,6 +29,7 @@ public class Rediff {
 
 		WebElement baseTable = driver.findElement(By.tagName("table"));
 		List<WebElement> rows = baseTable.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr"));
+		
 		List<WebElement> columns = baseTable.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr/td"));
 
 		for (int i = 0; i < rows.size(); i++) {
@@ -37,12 +38,12 @@ public class Rediff {
 		}
 		System.out.println("**********************************************");
 		// To find third row of table
-		WebElement row = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[3]"));
+		WebElement row = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[17]"));
 		String rowtext = row.getText();
-		System.out.println("Third row of table : " + rowtext);
+		System.out.println("Seventeen  row of table : " + rowtext);
 
-		// to get 3rd row's 2nd column data
-		WebElement column = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[3]/td[3]"));
+		// to get 3rd row's 3rd column data
+		WebElement column = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[17]/td[3]"));
 		String columnValue = column.getText();
 		System.out.println("Cell value is : " + columnValue);
 
