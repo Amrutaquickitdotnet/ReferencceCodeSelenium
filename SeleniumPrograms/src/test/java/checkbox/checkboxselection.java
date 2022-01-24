@@ -17,7 +17,7 @@ public class checkboxselection {
 	public static void main(String[] args) {
 
 		login();
-		multiplecheckbox();
+		selectedcheckbox();
 
 	}
 
@@ -48,8 +48,15 @@ public class checkboxselection {
 		WebElement e = driver.findElement(By.xpath("//*[@id='ohrmList_chkSelectAll']"));
 
 		e.click();
+	
 		System.out.println("Checkbox was selected:" + e.isSelected());
-		e.click();
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		e.click();// for deselection of checkbox
 		System.out.println("Checkbox is disabled"+ " "+e.isSelected());
 
 	}
@@ -69,17 +76,18 @@ public class checkboxselection {
 
 	public static void multiplecheckbox() {
 		
-		String s = "     pooja    ";
-		System.out.println("Before trim"+s);
-		
-		System.out.println("After Trimming"+":"+s.trim());
+		/*
+		 * String s = "     pooja    "; System.out.println("Before trim"+s);
+		 * 
+		 * System.out.println("After Trimming"+":"+s.trim());
+		 */
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@id='resultTable']/tbody//input"));
 		for (WebElement chbox : checkboxes) {
 			WebElement vacancy = chbox.findElement(By.xpath("../../td[2]"));
 			String vacancyname = vacancy.getText();
 			String desiredvacancy = vacancyname.trim().toLowerCase();
         
-			if (desiredvacancy.startsWith("Software Engineer".toLowerCase()) && desiredvacancy.contains("junior Account Assistant".toLowerCase())) {
+			if (desiredvacancy.startsWith("Software Engineer".toLowerCase()) || desiredvacancy.contains("Junior Account Assistant".toLowerCase())) {
 				chbox.click();
 				
 			}
@@ -91,7 +99,7 @@ public class checkboxselection {
 		int totalcheckboxes = checkboxes.size();
 		for (int i = 0; i < totalcheckboxes; i++) 
 		{
-			if (i <=2)
+			if (i <2)
 			{
 				checkboxes.get(i).click();
 			}

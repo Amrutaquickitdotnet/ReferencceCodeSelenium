@@ -37,7 +37,8 @@ static ChromeDriver driver;
         
         WebElement dropTo = driver.findElement(By.xpath("//*[@id= 'gate']"));        
        
-      
+      // Action=> Interface
+        //Actions=> Class
         //Performing Drag and drop Action
         Actions actions = new Actions(driver); 
         actions.dragAndDrop(dgragFrom, dropTo).build().perform();

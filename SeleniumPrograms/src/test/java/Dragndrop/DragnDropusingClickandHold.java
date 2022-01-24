@@ -43,6 +43,7 @@ static ChromeDriver driver;
          .moveToElement(dropTo)
          .release(dropTo)
          .build();
+         
         
         //Using perform method to perform above sequence of action
         dragAndDropAction.perform();

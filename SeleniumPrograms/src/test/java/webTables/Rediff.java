@@ -6,44 +6,46 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 public class Rediff {
 	static WebDriver driver;
-	
+
 	public static void main(String[] args) {
 		testTable();
 	}
+
 	public static void testTable() {
 		WebDriverManager.chromedriver().setup();
-		 ChromeDriver driver  = new ChromeDriver();
-		
+		ChromeDriver driver = new ChromeDriver();
+
 		driver.manage().window().maximize();
-	  String company="Prism Johnson"; // find the current price
-	 
-	  driver.get("https://money.rediff.com/gainers/bse/daily/groupa?src=gain_lose");
-	  
-	  List<WebElement> names = driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td[1]"));
-	  List<WebElement> prices = driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td[4]"));
-	  System.out.println("Total companies "+ names.size());
-	  System.out.println("Total prices "+ prices.size());
-	  
-	  for(int i=0;i<names.size();i++) {
-		  if(company.equals(names.get(i).getText())) {
-			  System.out.println(names.get(i).getText()+" -- "+ prices.get(i).getText());
-			  break;
-		  }
-	  }
-	
-	  
-	  
-	  
-	  
-	  
+
+		// find the current price
+
+		driver.get("https://money.rediff.com/gainers/bse/daily/groupa?src=gain_lose");
+
+		WebElement baseTable = driver.findElement(By.tagName("table"));
+		List<WebElement> rows = baseTable.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr"));
+		List<WebElement> columns = baseTable.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr/td"));
+
+		for (int i = 0; i < rows.size(); i++) {
+			System.out.println(rows.get(i).getText() + columns.get(i).getText());
+
+		}
+		System.out.println("**********************************************");
+		// To find third row of table
+		WebElement row = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[3]"));
+		String rowtext = row.getText();
+		System.out.println("Third row of table : " + rowtext);
+
+		// to get 3rd row's 2nd column data
+		WebElement column = baseTable.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr[3]/td[3]"));
+		String columnValue = column.getText();
+		System.out.println("Cell value is : " + columnValue);
+
 	}
-	
 
 }

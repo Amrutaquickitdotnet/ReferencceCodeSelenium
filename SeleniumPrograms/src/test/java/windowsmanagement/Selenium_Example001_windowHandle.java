@@ -19,9 +19,10 @@ public class Selenium_Example001_windowHandle {
 		driver.get("https://www.kotak.com/en/home.html");
 		WebElement login = driver.findElement(By.xpath("//span[contains(text(),'Login')]"));
 		login.click();
-		System.out.println("Currentwindow Handle_Parent_Window:" + driver.getWindowHandle());
+	//	System.out.println("Currentwindow Handle_Parent_Window:" + driver.getWindowHandle());
 
 		Set<String> handles = driver.getWindowHandles();
+		
 		for (String handle : handles)
 			System.out.println(handle);
 
