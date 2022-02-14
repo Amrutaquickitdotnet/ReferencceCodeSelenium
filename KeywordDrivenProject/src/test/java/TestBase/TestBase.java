@@ -1,5 +1,6 @@
 package TestBase;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class TestBase {
 
 	public void execute(String teststeps, String locatorType, String selector, String action, String value) {
 		WebElement element;
-		switch (action) {
+		switch (action.toLowerCase()) {
 		case "openbrowser":
 			System.out.println("I want to open chrome browser");
 			init_driver();
@@ -22,6 +23,16 @@ public class TestBase {
 			break;
 		case "enterurl":
 			driver.get(value);
+			break;
+			
+		case "sleep":
+			//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5))	;		
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		case "sendkeys":
 			element = getElement(locatorType, selector);
@@ -42,7 +53,7 @@ public class TestBase {
 	public WebElement getElement(String locatorType, String selector) {
 		WebElement element = null;
 
-		switch (locatorType) {
+		switch(locatorType) {
 		case "id":
 			element = driver.findElement(By.id(selector));
 			break;

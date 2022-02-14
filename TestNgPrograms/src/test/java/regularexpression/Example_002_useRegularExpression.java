@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class Example_002_useRegularExpression {
 	ChromeDriver driver;
     // Saving the expected title of the Webpage
-    String title = "ToolsQA - Demo Website For Automation";
+    String title = "Demo Website For Automation";
     
    
     @Test

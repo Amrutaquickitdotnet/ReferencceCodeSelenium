@@ -2,24 +2,28 @@ package FileUpload;
 
 
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FileUpload {
+public class FileUpload_usingAutoIT {
 	static WebDriver driver;
 
 		
-		public static void main(String[] args) {
+		public static void main(String[] args) throws IOException {
 			
 			
 			login();
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(9000);
 			} catch (InterruptedException e) {
 				
 				e.printStackTrace();
@@ -47,9 +51,20 @@ public class FileUpload {
 		  
 			
 		}
-		public static void fileUpload(){
-			WebElement obj = driver.findElement(By.xpath("//input[@id='photofile']"));
-			obj.sendKeys(System.getProperty("user.dir")+"//src//test//resources//images//abc.jpg");
+		public static void fileUpload() throws IOException{
+		
+			WebElement obj = driver.findElement(By.id("photofile"));
+			Actions act = new Actions(driver);
+			act.moveToElement(obj).click().build().perform();
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+			// C # Process.start
+			Runtime.getRuntime().exec("D:\\datatest.exe");
+			
 		}
 		
 
