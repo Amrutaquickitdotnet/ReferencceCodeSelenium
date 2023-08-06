@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Dice {
 
@@ -22,7 +21,7 @@ public class Dice {
 	}
 
 	public static void testApp() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
+		
 		ChromeDriver driver = new ChromeDriver();
 
 		driver.get("https://www.dice.com/jobs");

@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class Rediff {
 	static WebDriver driver;
 
@@ -18,7 +16,7 @@ public class Rediff {
 	}
 
 	public static void testTable() {
-		WebDriverManager.chromedriver().setup();
+		
 		ChromeDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();

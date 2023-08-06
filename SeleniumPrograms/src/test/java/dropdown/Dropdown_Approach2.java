@@ -3,12 +3,11 @@ package dropdown;
 import java.util.List;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Dropdown_Approach2 {
 	static ChromeDriver driver;
@@ -18,11 +17,11 @@ public class Dropdown_Approach2 {
 	}
 
 	public static void countryDropdown() {
-		WebDriverManager.chromedriver().setup();
+		
 		ChromeDriver driver = new ChromeDriver();
-		driver.get("https://www.opencart.com/index.php?route=account/register");
+		driver.get("https://www.orangehrm.com/en/30-day-free-trial/");
 		driver.manage().window().maximize();
-		WebElement countries = driver.findElement(By.id("input-country"));
+		WebElement countries = driver.findElement(By.name("Country"));
 		Select se = new Select(countries);
 
 		List<WebElement> allCountries = se.getOptions();

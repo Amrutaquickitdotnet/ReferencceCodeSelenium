@@ -9,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 
 public class WebTable {
 	static WebDriver driver;
@@ -21,7 +19,7 @@ public class WebTable {
 	
 	public static void testApp() {
 		
-		WebDriverManager.chromedriver().setup();
+	
 		 ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.encodedna.com/javascript/demo/dynamically-add-or-remove-table-rows-using-javascript-and-save-data.htm");
 		driver.manage().window().maximize();

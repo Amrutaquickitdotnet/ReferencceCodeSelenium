@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Dragable_Jquery {
 static WebDriver driver;
@@ -20,7 +20,7 @@ static WebDriver driver;
 	
 	public static void dragndropObjects()
 	{
-		WebDriverManager.chromedriver().setup();
+	
 		  driver  = new ChromeDriver();
 		  driver.get("https://jqueryui.com/droppable/"); 
 		  

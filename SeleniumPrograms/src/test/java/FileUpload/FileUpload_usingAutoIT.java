@@ -1,18 +1,12 @@
 package FileUpload;
-
-
-
 import java.io.IOException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FileUpload_usingAutoIT {
 	static WebDriver driver;
@@ -36,9 +30,6 @@ public class FileUpload_usingAutoIT {
 		
 		public static void login()
 		{
-			//System.out.println(System.getProperty("user.dir"));
-			WebDriverManager.chromedriver().setup();
-			
 			driver = new ChromeDriver();
 			driver.get("https://opensource-demo.orangehrmlive.com/index.php/pim/addEmployee");
 			driver.manage().window().maximize();

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-//program to illustrate webelement by "ID"
+
 public class Example_004_WebElement_Byid 
 {
 	
@@ -13,26 +13,22 @@ public class Example_004_WebElement_Byid
 	public static void main(String[] args)// Static method
 	{
 
-		System.setProperty("webdriver.chrome.driver", "D:\\JarFiles\\chromedriver.exe");
+		
 		driver = new ChromeDriver();
 
 		// there are 2 method to get url
 		driver.get("https://opensource-demo.orangehrmlive.com/");
-		/*
-		 * driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
-		 * driver.navigate().to("https://www.amazon.co.in"); driver.navigate().back();
-		 * driver.navigate().refresh(); driver.navigate().forward();
-		 */
+		
 		driver.manage().window().maximize();
-		// to send value inside username field
-		WebElement username = driver.findElement(By.id("txtUsername"));
+		
+		WebElement username = driver.findElement(By.xpath("//input[@type='username')"));
 		username.sendKeys("Admin");
 
 		// to send value inside password field
-		WebElement password = driver.findElement(By.id("txtPassword"));
+		WebElement password = driver.findElement(By.id("//input[@type='password'"));
 		password.sendKeys("admin123");
 
-		WebElement loginBtn = driver.findElement(By.id("btnLogin"));
+		WebElement loginBtn = driver.findElement(By.id("//button[@type='submit'"));
 		loginBtn.click();
 
 	}

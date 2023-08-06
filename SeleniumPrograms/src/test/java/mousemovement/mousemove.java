@@ -8,18 +8,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class mousemove {
 
+	
+	static WebDriver driver;
 	public static void main(String[] args) {
 		
 		
 	
 	{
 
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver  = new ChromeDriver();
+		
+		driver  = new ChromeDriver();
 		driver.get("https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers");
 		driver.manage().window().maximize();
 		

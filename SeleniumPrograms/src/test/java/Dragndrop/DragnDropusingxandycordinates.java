@@ -3,10 +3,8 @@ package Dragndrop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DragnDropusingxandycordinates {
 static ChromeDriver driver;
@@ -21,7 +19,7 @@ static ChromeDriver driver;
 	
 	public static void launchbrowser()
 	{
-		WebDriverManager.chromedriver().setup();
+	
 		  driver  = new ChromeDriver();
 		  driver.get("https://javascript.info/article/mouse-drag-and-drop/ball4/"); 
 		  
