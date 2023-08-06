@@ -5,16 +5,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.openqa.selenium.interactions.Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class KeyboardEventusingshift {
 	static WebDriver driver;
 	// Example will demonstrate keyboard event  in new window 
 	public static void main(String[] args) {
-		WebDriverManager.chromedriver().setup();
+		
 		  driver  = new ChromeDriver();
 		driver = new ChromeDriver();
 		driver.get("http://www.google.com");

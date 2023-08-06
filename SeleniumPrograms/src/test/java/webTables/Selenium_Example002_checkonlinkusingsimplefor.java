@@ -5,9 +5,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Selenium_Example002_checkonlinkusingsimplefor {
 	
@@ -75,8 +74,8 @@ public class Selenium_Example002_checkonlinkusingsimplefor {
 					
 					public static void login( )
 					{
-						WebDriverManager.chromedriver().setup();
-						 //ChromeDriver driver  = new ChromeDriver();
+						driver = new ChromeDriver();
+						
 						driver.get("https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers");
 						driver.manage().window().maximize();
 						WebElement e = driver.findElement(By.id("txtUsername"));

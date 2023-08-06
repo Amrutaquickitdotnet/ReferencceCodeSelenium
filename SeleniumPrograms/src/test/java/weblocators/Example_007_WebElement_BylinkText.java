@@ -13,7 +13,7 @@ public class Example_007_WebElement_BylinkText {
 	public static void main(String[] args)// Static method
 	{
 
-		System.setProperty("webdriver.chrome.driver", "D:\\JarFiles\\chromedriver.exe");
+	
 		driver = new ChromeDriver();
 
 		// <a href="/index.php/auth/requestPasswordResetCode">Forgot your password?</a>

@@ -2,14 +2,13 @@ package checkbox;
 
 import java.util.List;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class checkboxselection {
 	static WebDriver driver;
@@ -17,32 +16,45 @@ public class checkboxselection {
 	public static void main(String[] args) {
 
 		login();
-		selectedcheckbox();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		multiplecheckbox();
 
 	}
 
 	public static void login() {
-		WebDriverManager.chromedriver().setup();
+		
 		driver = new ChromeDriver();
-		driver.get("https://opensource-demo.orangehrmlive.com/index.php/recruitment/viewCandidates");
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates");
 		driver.manage().window().maximize();
-		WebElement e = driver.findElement(By.id("txtUsername"));
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebElement e = driver.findElement(By.xpath("//input[@name='username']"));
 		e.sendKeys("Admin");
-		e = driver.findElement(By.id("txtPassword"));
+		e = driver.findElement(By.xpath("//input[@name='password']"));
 		e.sendKeys("admin123");
-		e = driver.findElement(By.name("Submit"));
+		e = driver.findElement(By.xpath("//button[@type='submit']"));
 		e.click();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 
 	}
 
-	/*
-	 * select specific chekbox of persons name
-	 * 
-	 * how to select all checkbox how to select multiplecheckbox how to select last
-	 * 2 checkbox how to select first 2 checkbox
-	 */
+
 	public static void allcheck() {
 
 		WebElement e = driver.findElement(By.xpath("//*[@id='ohrmList_chkSelectAll']"));
@@ -76,22 +88,28 @@ public class checkboxselection {
 
 	public static void multiplecheckbox() {
 		
-		/*
-		 * String s = "     pooja    "; System.out.println("Before trim"+s);
-		 * 
-		 * System.out.println("After Trimming"+":"+s.trim());
-		 */
-		List<WebElement> checkboxes = driver.findElements(By.xpath("//*[@id='resultTable']/tbody//input"));
-		for (WebElement chbox : checkboxes) {
-			WebElement vacancy = chbox.findElement(By.xpath("../../td[2]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,300)");
+
+		List<WebElement> checkboxes = driver.findElements(By.xpath("//div[@class='oxd-table-cell oxd-padding-cell'][1]"));
+		for (WebElement chbox : checkboxes)
+		{
+			WebElement vacancy = driver.findElement(By.xpath("//div[@class='oxd-table-cell oxd-padding-cell'][2]"));
 			String vacancyname = vacancy.getText();
-			String desiredvacancy = vacancyname.trim().toLowerCase();
+			System.out.println(vacancyname);
+			
+			WebElement hiringManager = chbox.findElement(By.xpath("//div[@class='oxd-table-cell oxd-padding-cell'][4]"));
+			String manager = hiringManager.getText();
+			String managers = manager.trim().toLowerCase();
         
-			if (desiredvacancy.startsWith("Software Engineer".toLowerCase()) || desiredvacancy.contains("Junior Account Assistant".toLowerCase())) {
+			if (vacancyname.startsWith("Odis Adalwin".toLowerCase()) || managers.contains("Senior QA Lead".toLowerCase())) {
 				chbox.click();
+				break;
 				
 			}
 		}
+		
+		
 	}
 
 	public static void firsttwo() {

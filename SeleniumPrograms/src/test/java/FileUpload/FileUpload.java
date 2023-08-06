@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class FileUpload {
 	static WebDriver driver;
 
@@ -32,8 +30,7 @@ public class FileUpload {
 		
 		public static void login()
 		{
-			//System.out.println(System.getProperty("user.dir"));
-			WebDriverManager.chromedriver().setup();
+			
 			
 			driver = new ChromeDriver();
 			driver.get("https://opensource-demo.orangehrmlive.com/index.php/pim/addEmployee");

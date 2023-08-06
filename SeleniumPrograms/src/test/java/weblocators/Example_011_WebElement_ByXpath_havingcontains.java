@@ -4,7 +4,6 @@ package weblocators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Example_011_WebElement_ByXpath_havingcontains {

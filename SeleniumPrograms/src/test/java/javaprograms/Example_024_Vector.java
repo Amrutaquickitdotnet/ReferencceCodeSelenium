@@ -2,7 +2,6 @@ package javaprograms;
 
 
 import java.util.Iterator;
-
 import java.util.Vector;
 
 public class Example_024_Vector {

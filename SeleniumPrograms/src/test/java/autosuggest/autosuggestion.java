@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class autosuggestion {
 	static WebDriver driver;
@@ -24,16 +24,24 @@ public class autosuggestion {
 
 	public static void keyup() {
 		
-		WebDriverManager.chromedriver().setup();
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		driver.get("https://www.yahoo.com/");
 		driver.findElement(By.name("p")).sendKeys("Selenium");
-		
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//ul[@role='listbox']//li")));
+		/*
+		 * WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		 * wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
+		 * "//ul[@role='listbox']//li")));
+		 */
 		
 		List<WebElement> list = driver.findElements(By.xpath("//ul[@role='listbox']//li"));
 		

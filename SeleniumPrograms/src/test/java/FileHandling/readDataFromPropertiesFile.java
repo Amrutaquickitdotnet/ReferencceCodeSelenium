@@ -10,8 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class readDataFromPropertiesFile {
 
 	//FileReader=> Reading file but in format of json , xml
@@ -29,26 +27,27 @@ public class readDataFromPropertiesFile {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-			
-		
-		
 		Properties p = new Properties();
 		try {
 			p.load(fs);
-			System.out.println("hi");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		WebDriverManager.chromedriver().setup();
-		  driver  = new ChromeDriver();
+
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(p.getProperty("URL"));
-		driver.findElement(By.name("txtUsername")).sendKeys(p.getProperty("Username"));
-		driver.findElement(By.name("txtPassword")).sendKeys(p.getProperty("Password"));
-		driver.findElement(By.xpath("//*[@id='btnLogin']")).click();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys(p.getProperty("Username"));
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(p.getProperty("Password"));
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 
 	}

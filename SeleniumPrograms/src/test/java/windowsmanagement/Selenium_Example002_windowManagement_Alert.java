@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Selenium_Example002_windowManagement_Alert {
   static WebDriver driver;
@@ -19,7 +19,7 @@ public class Selenium_Example002_windowManagement_Alert {
 	}
 
 	public static void startAlert() {
-		WebDriverManager.chromedriver().setup();
+		
 		 driver = new ChromeDriver();
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 		driver.manage().window().maximize();

@@ -13,7 +13,7 @@ public class Example_006_WebElement_ByXpath {
 	public static void main(String[] args)// Static method
 	{
 
-		System.setProperty("webdriver.chrome.driver", "D:\\drivers\\chromedriver.exe");
+		
 		driver = new ChromeDriver();
 
 		// there are 2 method to get url
