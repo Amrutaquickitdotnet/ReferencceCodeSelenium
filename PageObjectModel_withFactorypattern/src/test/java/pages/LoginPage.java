@@ -12,9 +12,12 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver,this);//lazy initialisation //AjaxElementLocatorFactory
 		
 	}
+	
+	@FindBy(tagName = "a")
+	WebElement readmoreLink;
 	
 	@FindBy(id = "txtUsername")
 	WebElement usernameElement;

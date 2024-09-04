@@ -15,16 +15,16 @@ public class LoginPage {
 	
 	//locators for username field
 	
-	By username = By.id("txtUsername");
+	By username = By.name("username");
 	
 	
 	//locators for password field
 	
-	By password = By.id("txtPassword");
+	By password = By.name("password");
 	
 	// locators for login button
 	
-	By loginButton = By.id("btnLogin");	
+	By loginButton = By.xpath("//button[@type='submit']");	
 	
 	public void enterUserName(String user) {
 		driver.findElement(username).sendKeys(user);

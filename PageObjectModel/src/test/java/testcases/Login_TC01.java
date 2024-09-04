@@ -8,10 +8,11 @@ import pages.LoginPage;
 public class Login_TC01 {
 	static WebDriver driver;
 
-	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "G:\\drivers\\chromedriver.exe");
+	public static void main(String[] args) throws InterruptedException {
+		
 		 driver = new ChromeDriver();
 		driver.get("https://opensource-demo.orangehrmlive.com");
+		Thread.sleep(3000);
 		
 		LoginPage login = new LoginPage(driver);
 		
